@@ -102,7 +102,7 @@ public class FlutterBluetoothSerialPlugin implements MethodCallHandler, RequestP
 
         // General Bluetooth
         {
-            this.bluetoothManager = (BluetoothManager) registrar.activity().getSystemService(Context.BLUETOOTH_SERVICE);
+            this.bluetoothManager = (BluetoothManager) registrar.context().getSystemService(Context.BLUETOOTH_SERVICE);
             assert this.bluetoothManager != null;
 
             this.bluetoothAdapter = bluetoothManager.getAdapter();
@@ -985,7 +985,7 @@ public class FlutterBluetoothSerialPlugin implements MethodCallHandler, RequestP
 
     private void ensurePermissions(EnsurePermissionsCallback callbacks) {
         if (
-            ContextCompat.checkSelfPermission(registrar.activity(),
+            ContextCompat.checkSelfPermission(registrar.context(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) 
                     != PackageManager.PERMISSION_GRANTED
         ) {
