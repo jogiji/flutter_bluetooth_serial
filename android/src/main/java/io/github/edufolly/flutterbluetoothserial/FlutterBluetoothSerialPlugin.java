@@ -84,7 +84,7 @@ public class FlutterBluetoothSerialPlugin implements MethodCallHandler, RequestP
     /// Registers plugin in Flutter plugin system
     public static void registerWith(Registrar registrar) {
         final FlutterBluetoothSerialPlugin instance = new FlutterBluetoothSerialPlugin(registrar);
-        if(registrar.acivity()!=null) {
+        if(registrar.activity()!=null) {
             registrar.addRequestPermissionsResultListener(instance);
             registrar.addActivityResultListener(instance);
             registrar.addViewDestroyListener(instance);
